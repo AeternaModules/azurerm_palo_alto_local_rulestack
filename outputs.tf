@@ -1,3 +1,7 @@
+output "palo_alto_local_rulestacks_id" {
+  description = "Map of id values across all palo_alto_local_rulestacks, keyed the same as var.palo_alto_local_rulestacks"
+  value       = { for k, v in azurerm_palo_alto_local_rulestack.palo_alto_local_rulestacks : k => v.id }
+}
 output "palo_alto_local_rulestacks_anti_spyware_profile" {
   description = "Map of anti_spyware_profile values across all palo_alto_local_rulestacks, keyed the same as var.palo_alto_local_rulestacks"
   value       = { for k, v in azurerm_palo_alto_local_rulestack.palo_alto_local_rulestacks : k => v.anti_spyware_profile }
